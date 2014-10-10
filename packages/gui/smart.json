@@ -1,0 +1,6 @@
+{
+	"name": "GUI",
+	"description": "Builds the container for a graphical user interface",
+	"author": "Erik O'Keefe",
+	"version": "0.0.1",
+}

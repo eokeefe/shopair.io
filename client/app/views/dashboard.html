@@ -1,0 +1,24 @@
+<template name="dashboard">
+	{{analogGauge "ag1" title="Tank Pressure" x=20 y=60 r=150 fade=1000 delay=1000}}
+	{{analogGauge "ag2" title="Line Pressure" x=450 y=60 r=150 fade=1000 delay=1000}}
+	{{toggleSwitch "sw" x=725 y=60 r=150 fade=1000 delay=1000}}
+	{{LED "led1" title="Live" x=925 y=325 height=25 width=150 fade=1000 delay=1000}}
+	{{LED "led2" title="Neutral" x=925 y=375 height=25 width=150 fade=1000 delay=1000}}
+	{{pushButton "pb" title="Dump Tank" x=1200 y=375 fade=1000 delay=1000}} 
+
+	<script type="text/javascript">
+		function test() {
+			HTTP.get("https://agent.electricimp.com/OB6hn8AxCar-", function(err, res) {
+				if (err) console.log(err);
+				else {
+					AnalogGauge.ag1.gauge(res.data.pres1*150);
+					AnalogGauge.ag1.display(res.data.pres1*150);
+				}
+			});
+		};
+
+		setInterval(test, 20);
+
+		// Settings.update(Session.get("user"), {$set: {"power": true}});
+	</script>
+</template>
