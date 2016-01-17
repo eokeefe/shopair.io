@@ -1,6 +1,7 @@
 
 // var impID = "OB6hn8AxCar-"; // Prototype
-var impID = "iMwKmYoPiOjm"; // Board 1
+// var impID = "iMwKmYoPiOjm"; // Board 1
+var impID = "TDAhgzgsDS-B"; // Board 3
 
 // Data request
 function compPull () {
